@@ -10,30 +10,54 @@ It includes:
 - `scripts/collect_apple_hig.py` - optional Python script to refresh the source corpus from Apple Developer JSON endpoints.
 - Agent compatibility files for Codex, Cursor, Claude Code, Gemini CLI, GitHub Copilot, and Aider.
 
-## Install For Codex
+## Install With Skillfish
 
-Close any active Codex session that should pick up the new skill, then clone the repo into your Codex skills folder.
+Skillfish installs skills to all detected AI coding agents on your system.
 
-### Windows PowerShell
-
-```powershell
-$skillDir = "$env:USERPROFILE\.codex\skills\apple-like-ui"
-git clone https://github.com/Ethelye/skillfish.git $skillDir
-```
-
-### macOS Or Linux
+One-off install:
 
 ```bash
-git clone https://github.com/Ethelye/skillfish.git ~/.codex/skills/apple-like-ui
+npx skillfish add Ethelye/apple-like-ui-skill apple-like-ui
 ```
 
-Start a new Codex session and invoke it with:
+If you installed Skillfish globally:
+
+```bash
+skillfish add Ethelye/apple-like-ui-skill apple-like-ui
+```
+
+Restart your AI coding agent after installation, then invoke the skill with:
 
 ```text
 Use $apple-like-ui to redesign this screen with Apple-like UI polish.
 ```
 
+## Manual Codex Install
+
+Use this only if you do not want to use Skillfish.
+
+### Windows PowerShell
+
+```powershell
+$skillDir = "$env:USERPROFILE\.codex\skills\apple-like-ui"
+git clone https://github.com/Ethelye/apple-like-ui-skill.git $skillDir
+```
+
+### macOS Or Linux
+
+```bash
+git clone https://github.com/Ethelye/apple-like-ui-skill.git ~/.codex/skills/apple-like-ui
+```
+
 ## Update
+
+With Skillfish:
+
+```bash
+skillfish update
+```
+
+Manual Codex update:
 
 ### Windows PowerShell
 
@@ -49,7 +73,7 @@ git -C ~/.codex/skills/apple-like-ui pull
 
 ## Use With Other AI Coding Agents
 
-Open or clone this repository in the agent's workspace.
+Skillfish handles supported agents automatically. If you are wiring the repo manually:
 
 - Codex and Cursor-style agents: read `AGENTS.md`.
 - Claude Code: reads `CLAUDE.md`, which imports `AGENTS.md`.
