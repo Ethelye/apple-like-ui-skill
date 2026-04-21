@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple-like UI"
+  short_description: "Design refined Apple-style interfaces"
+  default_prompt: "Use $apple-like-ui to design and implement a polished Apple-like interface for this app."
